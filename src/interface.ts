@@ -11,7 +11,7 @@ const uniform1: Uniform = {
   color: "red",
 };
 
-// type이랑 비슷하지만 오브젝트에만 가능
+// type이랑 비슷하지만 오브젝트나 클래스에만 가능
 interface Member {
   name: string;
   age: number;
@@ -62,3 +62,32 @@ const music1: PartOfMusic = {
   velocity: 1,
   volume: 1,
 };
+
+// 클래스에서 구현할 인터페이스
+interface Animal {
+  name: string;
+  color: string;
+  isPet: boolean;
+  move(x:number, y:number): void;
+  sound(): void;
+}
+
+interface Organic {
+    health: number,
+}
+
+// 인터페이스를 구현하는 클래스의 필드는 public으로만 가능
+class Duck implements Animal, Organic {
+  constructor(
+    public name: string,
+    public color: string,
+    public isPet: boolean,
+    public health: number,
+  ) {}
+  move(x: number, y: number): void {
+    console.log(`moved by (${x}, ${y})`);
+  }
+  sound(): void {
+    console.log("quek quak");
+  }
+}  
