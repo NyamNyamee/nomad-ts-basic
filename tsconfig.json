@@ -1,10 +1,9 @@
 {
-  "include": [
-    "src"  // 타입스크립트 파일이 든 경로
-  ],
+  "include": ["src"], // js로 컴파일할 ts파일이 든 경로  
   "compilerOptions": {
-    "outDir": "build",  // 자바스크립트로 빌드 시 파일이 생길 경로
-    "target": "es6"  // 어떤 버전의 자바스크립트로 컴파일할건지
+    "outDir": "build",  // js로 빌드 시 파일이 생길 경로
+    "target": "es6",  // 어떤 버전의 js로 컴파일할건지
+    "lib": ["es6", "DOM"]  // 어떤 환경에서 코드가 실행되는지
   }
 }
 
