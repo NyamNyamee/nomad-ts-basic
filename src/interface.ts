@@ -91,3 +91,61 @@ class Duck implements Animal, Organic {
     console.log("quek quak");
   }
 }  
+
+type Beverage = {
+  name: string;
+  color: string;
+  flavor: string;
+  sparkle: boolean;
+};
+
+const beverage1: Beverage = {
+  name: "coke",
+  color: "darkBrown",
+  flavor: "sweet",
+  sparkle: true,
+};
+
+type Beverage2 = Beverage & {
+  healthScore: number;
+};
+
+const beverage2: Beverage2 = {
+  name: "coke",
+  color: "darkBrown",
+  flavor: "sweet",
+  sparkle: true,
+  healthScore: 2
+}
+
+interface NewBeverage {
+  name: string;
+  color: string;
+  flavor: string;
+  healthScore: number;
+}
+
+const newBeverage1: NewBeverage = {
+  name: "juice",
+  color: "orange",
+  flavor: "orange",
+  healthScore: 6
+};
+
+interface NewBeverage2 extends NewBeverage {
+  forKids: boolean;
+}
+
+// type은 불가능하지만, interface는 같은 이름으로 중복해서 만들면 자동으로 프로퍼티가 합쳐짐
+interface NewBeverage2 {
+  luxury: boolean;
+}
+
+const newBeverage2: NewBeverage2 = {
+  name: "juice",
+  color: "orange",
+  flavor: "orange",
+  healthScore: 6,
+  forKids: false,
+  luxury: false,
+};
