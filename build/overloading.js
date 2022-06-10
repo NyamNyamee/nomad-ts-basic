@@ -1,3 +1,4 @@
+"use strict";
 const request = param => {
     console.log(`url = ${param}`);
 };

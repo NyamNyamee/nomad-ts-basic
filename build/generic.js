@@ -1,3 +1,4 @@
+"use strict";
 const generic1 = (param1) => {
     param1.forEach((v) => {
         console.log(v);

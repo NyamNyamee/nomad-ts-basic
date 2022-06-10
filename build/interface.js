@@ -1,3 +1,4 @@
+"use strict";
 const uniform1 = {
     shape: 2,
     color: "red",
